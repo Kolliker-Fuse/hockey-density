@@ -1,0 +1,44 @@
+{
+  "name": "NHL 2D Density (D3)",
+  "description": "Contour-density heatmap for NHL shots.",
+  "devMode": true,
+  "components": [{
+    "id": "viz",
+    "name": "NHL Density",
+    "description": "2D density shading via d3-contour",
+    "resource": {
+      "js": ["index.js"],
+      "css": ["style.css"]
+    }
+  }],
+  "options": {
+    "bandwidth": {
+      "type": "NUMBER",
+      "label": "Kernel bandwidth",
+      "defaultValue": 22
+    },
+    "levels": {
+      "type": "NUMBER",
+      "label": "Contour levels",
+      "defaultValue": 12
+    },
+    "showRink": {
+      "type": "CHECKBOX",
+      "label": "Show rink image",
+      "defaultValue": true
+    }
+  },
+  "data": {
+    "datasets": [{
+      "id": "shots",
+      "label": "Shots",
+      "table": {
+        "fields": [
+          { "id": "x", "name": "X", "type": "NUMBER" },
+          { "id": "y", "name": "Y", "type": "NUMBER" }
+        ]
+      }
+    }]
+  }
+}
+
